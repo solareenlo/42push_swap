@@ -1,0 +1,7 @@
+obj
+*.a
+*.bak
+*.out
+main.c
+*.txt
+Makefile.bak
