@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/14 15:54:05 by tayamamo          #+#    #+#              #
-#    Updated: 2021/04/14 15:54:05 by tayamamo         ###   ########.fr        #
+#    Created: 2021/04/15 07:56:49 by tayamamo          #+#    #+#              #
+#    Updated: 2021/04/15 07:56:49 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for push_swap, updated Wed Apr 14 15:54:05 JST 2021
+# Makefile for push_swap, updated Thu Apr 15 07:56:49 JST 2021
 
 SRC_CH := ft_check_dup.c ft_check_int.c ft_check_ope.c ft_exit.c ft_run_ope_dq.c main.c
 OBJ_CH := ft_check_dup.o ft_check_int.o ft_check_ope.o ft_exit.o ft_run_ope_dq.o main.o
 
-SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_deque_attach.c ft_deque_cmp_with_med.c ft_deque_cmp_with_med2.c ft_deque_push_swap3.c ft_deque_push_swap4.c ft_deque_push_to.c ft_deque_sort.c ft_deque_sort234_front.c ft_deque_sort4.c ft_deque_sort4_1.c ft_exit.c ft_put_ope_push.c ft_put_ope_sort2.c ft_put_ope_sort3.c ft_put_reverse_rotate.c ft_put_rotate.c ft_put_swap.c main.c
-OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_deque_attach.o ft_deque_cmp_with_med.o ft_deque_cmp_with_med2.o ft_deque_push_swap3.o ft_deque_push_swap4.o ft_deque_push_to.o ft_deque_sort.o ft_deque_sort234_front.o ft_deque_sort4.o ft_deque_sort4_1.o ft_exit.o ft_put_ope_push.o ft_put_ope_sort2.o ft_put_ope_sort3.o ft_put_reverse_rotate.o ft_put_rotate.o ft_put_swap.o main.o
+SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_exit.c main.c
+OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_exit.o main.o
 
 HDR_CH := checker.h
 HDR_PS := push_swap.h
