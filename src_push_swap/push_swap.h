@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 16:30:41 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/16 20:39:09 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 # define RRA	0x040
 # define RRB	0x080
 # define RRR	0x0C0
+# define NON	0x000
+# define A		"a"
+# define B		"b"
+# define OPSIZE	20
 
 typedef struct s_dq
 {
@@ -33,6 +37,8 @@ typedef struct s_dq
 	t_deque	*b;
 	int		(*cmp_a)(const void *a, const void *b);
 	int		(*cmp_b)(const void *a, const void *b);
+	char	*aa;
+	char 	*bb;
 }	t_dq;
 
 int		ft_check_int(int argc, char *argv[]);
@@ -41,6 +47,10 @@ int		ft_cmp_ascending_order(const void *a, const void *b);
 int		ft_cmp_descending_order(const void *a, const void *b);
 t_dq	*ft_dq_init(int size);
 void	ft_dq_free(t_dq *dq);
+void	ft_dq_sort(t_dq *dq);
+void	ft_op_put(int op);
+void	ft_run_op_dq(t_deque *a, t_deque *b, int op);
+void	ft_op_put_dq(t_deque *op);
 void	ft_put_ope_push_to(char *s);
 void	ft_put_ope_push_from(char *s);
 void	ft_put_ope_reverse_rotate(char *s);

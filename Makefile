@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/16 16:39:07 by tayamamo          #+#    #+#              #
-#    Updated: 2021/04/16 16:39:07 by tayamamo         ###   ########.fr        #
+#    Created: 2021/04/16 20:39:41 by tayamamo          #+#    #+#              #
+#    Updated: 2021/04/16 20:39:41 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for push_swap, updated Fri Apr 16 16:39:07 JST 2021
+# Makefile for push_swap, updated Fri Apr 16 20:39:41 JST 2021
 
 SRC_CH := ft_check_dup.c ft_check_int.c ft_check_ope.c ft_exit.c ft_run_ope_dq.c main.c
 OBJ_CH := ft_check_dup.o ft_check_int.o ft_check_ope.o ft_exit.o ft_run_ope_dq.o main.o
 
-SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_dq_free.c ft_dq_init.c ft_dq_sort.c ft_exit.c main.c
-OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_dq_free.o ft_dq_init.o ft_dq_sort.o ft_exit.o main.o
+SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_dq_free.c ft_dq_init.c ft_dq_sort.c ft_exit.c ft_op_put.c ft_op_put_dq.c ft_run_op_dq.c main.c
+OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_dq_free.o ft_dq_init.o ft_dq_sort.o ft_exit.o ft_op_put.o ft_op_put_dq.o ft_run_op_dq.o main.o
 
 HDR_CH := checker.h
 HDR_PS := push_swap.h
