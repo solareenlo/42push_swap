@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 21:48:14 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/11 21:59:27 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:46:52 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	check_argv(char *argv)
 	}
 	while (argv[i])
 	{
-		if (ft_isdigit(argv[i] == 0))
+		if (ft_isdigit(argv[i]) == 0)
 			return (1);
 		l = 10 * l + argv[i++] - '0';
 		if ((sign == 1 && l > INTMAX)
