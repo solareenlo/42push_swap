@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:05:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/14 13:04:29 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/16 18:58:47 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ int		ft_deque_get_back(t_deque *dq);
 int		ft_deque_get_size(t_deque *dq, int start, int end);
 int		ft_deque_get_median(t_deque *dq, int size, t_cmp *cmp);
 int		ft_deque_get_first_quartile(t_deque *dq, int size, t_cmp *cmp);
+void	ft_deque_copy(t_deque *dst, const t_deque *src);
 void	ft_deque_put(t_deque *dq);
 int		ft_deque_sort2_front(t_deque *dq, t_cmp *cmp);
 int		ft_deque_sort3_front(t_deque *dq, t_cmp *cmp);
