@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 20:39:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/17 06:31:28 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define NON	0x000
 # define A		"a"
 # define B		"b"
-# define OPSIZE	20
+# define OPSIZE	9
 
 typedef struct s_dq
 {

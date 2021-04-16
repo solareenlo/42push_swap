@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/16 20:39:41 by tayamamo          #+#    #+#              #
-#    Updated: 2021/04/16 20:39:41 by tayamamo         ###   ########.fr        #
+#    Created: 2021/04/17 05:15:30 by tayamamo          #+#    #+#              #
+#    Updated: 2021/04/17 05:15:30 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for push_swap, updated Fri Apr 16 20:39:41 JST 2021
+# Makefile for push_swap, updated Sat Apr 17 05:15:30 JST 2021
 
 SRC_CH := ft_check_dup.c ft_check_int.c ft_check_ope.c ft_exit.c ft_run_ope_dq.c main.c
 OBJ_CH := ft_check_dup.o ft_check_int.o ft_check_ope.o ft_exit.o ft_run_ope_dq.o main.o

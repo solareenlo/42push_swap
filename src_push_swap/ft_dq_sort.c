@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 21:00:45 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/17 06:45:27 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,34 +58,58 @@ static void	dfs(t_dq *dq, t_deque *op, t_deque *res)
 	}
 	if (!ft_deque_is_empty(dq->a))
 	{
-		ft_deque_push_back(op, SA);
-		dfs(dq, op, res);
 		ft_deque_push_back(op, PB);
 		dfs(dq, op, res);
-		ft_deque_push_back(op, RA);
-		dfs(dq, op, res);
-		ft_deque_push_back(op, RRA);
-		dfs(dq, op, res);
+		ft_deque_pop_back(op);
+		if (ft_deque_get_size(dq->a, dq->a->front, dq->a->back) > 1)
+		{
+			if (ft_deque_get_back(op) != SA)
+			{
+				ft_deque_push_back(op, SA);
+				dfs(dq, op, res);
+				ft_deque_pop_back(op);
+			}
+			ft_deque_push_back(op, RA);
+			dfs(dq, op, res);
+			ft_deque_pop_back(op);
+			ft_deque_push_back(op, RRA);
+			dfs(dq, op, res);
+			ft_deque_pop_back(op);
+		}
 	}
-	if (!ft_deque_is_empty(dq->b))
+	ft_deque_push_back(op, PA);
+	dfs(dq, op, res);
+	ft_deque_pop_back(op);
+	if (ft_deque_get_size(dq->b, dq->b->front, dq->b->back) > 1)
 	{
-		ft_deque_push_back(op, SB);
-		dfs(dq, op, res);
-		ft_deque_push_back(op, PA);
-		dfs(dq, op, res);
+		if (ft_deque_get_back(op) != SB)
+		{
+			ft_deque_push_back(op, SB);
+			dfs(dq, op, res);
+			ft_deque_pop_back(op);
+		}
 		ft_deque_push_back(op, RB);
 		dfs(dq, op, res);
+		ft_deque_pop_back(op);
 		ft_deque_push_back(op, RRB);
 		dfs(dq, op, res);
+		ft_deque_pop_back(op);
 	}
-	if (!ft_deque_is_empty(dq->a) && !ft_deque_is_empty(dq->b))
+	if (ft_deque_get_size(dq->a, dq->a->front, dq->a->back) > 1
+			&& ft_deque_get_size(dq->b, dq->b->front, dq->b->back) > 1)
 	{
-		ft_deque_push_back(op, SS);
-		dfs(dq, op, res);
+		if (ft_deque_get_back(op) != SB)
+		{
+			ft_deque_push_back(op, SS);
+			dfs(dq, op, res);
+			ft_deque_pop_back(op);
+		}
 		ft_deque_push_back(op, RR);
 		dfs(dq, op, res);
+		ft_deque_pop_back(op);
 		ft_deque_push_back(op, RRR);
 		dfs(dq, op, res);
+		ft_deque_pop_back(op);
 	}
 }
 
@@ -115,10 +139,9 @@ void	ft_dq_sort(t_dq *dq)
 		ft_exit("Error\n");
 	_init_res(res);
 	mini = 0;
-	if (dq->a->size <= 4)
+	if (dq->a->size <= 5)
 	{
 		dfs(dq, op, res);
-		ft_putendl_fd("res:", 1);
 		ft_op_put_dq(res);
 	}
 	ft_deque_free(op);

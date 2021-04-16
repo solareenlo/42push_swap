@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 19:32:08 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 20:37:03 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/17 06:22:29 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 void	ft_op_put_dq(t_deque *op)
 {
-	int	i;
-	int	n;
-	int	x;
+	int		i;
+	int		n;
+	int		x;
+	t_deque	*cpy;
 
+	cpy = ft_deque_init(op->size);
+	ft_deque_copy(cpy, op);
 	n = ft_deque_get_size(op, op->front, op->back);
 	i = 0;
 	while (i < n)
 	{
-		x = ft_deque_get_front(op);
-		ft_deque_pop_front(op);
+		x = ft_deque_get_front(cpy);
+		ft_deque_pop_front(cpy);
 		if (x == SA)
 			ft_putendl_fd("sa", 1);
 		else if (x == SB)
@@ -50,4 +53,5 @@ void	ft_op_put_dq(t_deque *op)
 			ft_putendl_fd("non", 1);
 		i++;
 	}
+	ft_deque_free(cpy);
 }
