@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_run_op_dq.c                                     :+:      :+:    :+:   */
+/*   ft_op_run_dq.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:06:05 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 20:07:34 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/18 04:03:39 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static	void	_run_rr(t_deque *a, t_deque *b, int op)
 	}
 }
 
-void	ft_run_op_dq(t_deque *a, t_deque *b, int op)
+void	ft_op_run_dq(t_deque *a, t_deque *b, int op)
 {
 	int	tmp;
 
