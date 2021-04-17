@@ -6,39 +6,11 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 19:32:08 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/17 20:51:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/18 04:22:02 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	_put_op(int x)
-{
-	if (x == SA)
-		ft_putendl_fd("sa", 1);
-	else if (x == SB)
-		ft_putendl_fd("sb", 1);
-	else if (x == SS)
-		ft_putendl_fd("ss", 1);
-	else if (x == PA)
-		ft_putendl_fd("pa", 1);
-	else if (x == PB)
-		ft_putendl_fd("pb", 1);
-	else if (x == RA)
-		ft_putendl_fd("ra", 1);
-	else if (x == RB)
-		ft_putendl_fd("rb", 1);
-	else if (x == RR)
-		ft_putendl_fd("rr", 1);
-	else if (x == RRA)
-		ft_putendl_fd("rra", 1);
-	else if (x == RRB)
-		ft_putendl_fd("rrb", 1);
-	else if (x == RRR)
-		ft_putendl_fd("rrr", 1);
-	else if (x == NON)
-		ft_putendl_fd("non", 1);
-}
 
 void	ft_op_put_dq(t_deque *op)
 {
@@ -55,7 +27,7 @@ void	ft_op_put_dq(t_deque *op)
 	{
 		x = ft_deque_get_front(cpy);
 		ft_deque_pop_front(cpy);
-		_put_op(x);
+		ft_op_put(x);
 		i++;
 	}
 	ft_deque_free(cpy);
