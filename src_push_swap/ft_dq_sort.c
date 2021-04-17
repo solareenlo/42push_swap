@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/17 07:07:25 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/17 20:41:38 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	dfs(t_dq *dq, t_deque *op, t_deque *res);
 
-static int _run_op(t_dq *dq, t_deque *op)
+static int	_run_op(t_dq *dq, t_deque *op)
 {
 	t_dq	*tmp_dq;
 	t_deque	*tmp_op;
@@ -33,7 +33,8 @@ static int _run_op(t_dq *dq, t_deque *op)
 		ft_run_op_dq(tmp_dq->a, tmp_dq->b, ope);
 	}
 	ret = ft_deque_is_sorted(tmp_dq->a, tmp_dq->cmp_a);
-	if (ft_deque_get_size(tmp_dq->a, tmp_dq->a->front, tmp_dq->a->back) != tmp_dq->a->size)
+	if (ft_deque_get_size(tmp_dq->a, tmp_dq->a->front, tmp_dq->a->back)
+		!= tmp_dq->a->size)
 		ret = 0;
 	ft_deque_free(tmp_op);
 	ft_dq_free(tmp_dq);
@@ -76,9 +77,7 @@ static void	dfs(t_dq *dq, t_deque *op, t_deque *res)
 			_do_dfs(dq, op, res, RRA);
 		}
 	}
-	ft_deque_push_back(op, PA);
-	dfs(dq, op, res);
-	ft_deque_pop_back(op);
+	_do_dfs(dq, op, res, PA);
 	if (ft_deque_get_size(dq->b, dq->b->front, dq->b->back) > 1)
 	{
 		if (ft_deque_get_back(op) != SB)
@@ -87,7 +86,7 @@ static void	dfs(t_dq *dq, t_deque *op, t_deque *res)
 		_do_dfs(dq, op, res, RRB);
 	}
 	if (ft_deque_get_size(dq->a, dq->a->front, dq->a->back) > 1
-			&& ft_deque_get_size(dq->b, dq->b->front, dq->b->back) > 1)
+		&& ft_deque_get_size(dq->b, dq->b->front, dq->b->back) > 1)
 	{
 		if (ft_deque_get_back(op) != SB)
 			_do_dfs(dq, op, res, SS);

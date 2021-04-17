@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/17 06:31:28 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/17 20:53:31 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_dq
 	int		(*cmp_a)(const void *a, const void *b);
 	int		(*cmp_b)(const void *a, const void *b);
 	char	*aa;
-	char 	*bb;
+	char	*bb;
 }	t_dq;
 
 int		ft_check_int(int argc, char *argv[]);
