@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/18 03:56:06 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/19 04:35:14 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	_run_op(t_dq *dq, t_deque *op)
 	{
 		ope = ft_deque_get_front(tmp_op);
 		ft_deque_pop_front(tmp_op);
-		ft_run_op_dq(tmp_dq->a, tmp_dq->b, ope);
+		ft_op_run_dq(tmp_dq, ope);
 	}
 	ret = ft_deque_is_sorted(tmp_dq->a, tmp_dq->cmp_a);
 	if (ft_deque_get_size(tmp_dq->a, tmp_dq->a->front, tmp_dq->a->back)
