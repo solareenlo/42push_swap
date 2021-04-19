@@ -7,3 +7,4 @@ obj_push_swap
 test*
 pyviz.py
 permutation.cpp
+*.txt
