@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/18 04:04:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/19 17:02:11 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ int		ft_cmp_descending_order(const void *a, const void *b);
 t_dq	*ft_dq_init(int size);
 void	ft_dq_free(t_dq *dq);
 void	ft_dq_sort(t_dq *dq);
+t_deque	*ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size);
+void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[]);
 void	ft_op_put(int op);
 void	ft_op_put_dq(t_deque *op);
-void	ft_op_run_dq(t_deque *a, t_deque *b, int op);
+void	ft_op_run_dq(t_dq *dq, int op);
 void	ft_put_ope_push_to(char *s);
 void	ft_put_ope_push_from(char *s);
 void	ft_put_ope_reverse_rotate(char *s);
@@ -59,6 +61,9 @@ void	ft_put_ope_rotate(char *s);
 void	ft_put_ope_rr(void);
 void	ft_put_ope_swap(char *s);
 void	ft_put_ope_ss(void);
+void	ft_deque_push_to_other_ff(t_deque *from, t_deque *to, int size, char *s);
+void	ft_deque_push_to_me_bf(t_deque *from, int size, char *s);
+void	ft_deque_push_to_me_fb(t_deque *from, int size, char *s);
 int		ft_exit(char *s);
 
 #endif
