@@ -6,11 +6,32 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:13:57 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/20 16:28:03 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/20 18:47:23 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/* static void	_deque_copy(t_deque *dst, t_deque *src, int n) */
+/* { */
+/* 	int		x; */
+/* 	int		i; */
+/* 	t_deque	*tmp; */
+/*  */
+/* 	tmp = ft_deque_init(src->size); */
+/* 	if (tmp == NULL) */
+/* 		ft_exit("Error\n"); */
+/* 	ft_deque_copy(tmp, src); */
+/* 	i = 0; */
+/* 	while (i < n) */
+/* 	{ */
+/* 		x = ft_deque_get_front(tmp); */
+/* 		ft_deque_push_back(dst, x); */
+/* 		ft_deque_pop_front(tmp); */
+/* 		i++; */
+/* 	} */
+/* 	ft_deque_free(tmp); */
+/* } */
 
 static int	_run_op(t_dq *dq, int n, t_deque *op)
 {
@@ -21,6 +42,8 @@ static int	_run_op(t_dq *dq, int n, t_deque *op)
 
 	tmp_dq = ft_dq_init(dq->b->size);
 	ft_deque_copy(tmp_dq->b, dq->b);
+	/* tmp_dq = ft_dq_init(n); */
+	/* _deque_copy(tmp_dq->b, dq->b, n); */
 	tmp_op = ft_deque_init(OPSIZE);
 	ft_deque_copy(tmp_op, op);
 	while (!ft_deque_is_empty(tmp_op))
