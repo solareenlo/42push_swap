@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 05:00:20 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/20 03:16:40 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:28:08 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static int	_run_op(t_dq *dq, int n, t_deque *op)
 
 	tmp_dq = ft_dq_init(dq->a->size);
 	ft_deque_copy(tmp_dq->a, dq->a);
-	ft_deque_copy(tmp_dq->b, dq->b);
 	tmp_op = ft_deque_init(OPSIZE);
 	ft_deque_copy(tmp_op, op);
 	while (!ft_deque_is_empty(tmp_op))
@@ -31,6 +30,8 @@ static int	_run_op(t_dq *dq, int n, t_deque *op)
 		ft_op_run_dq(tmp_dq, ope);
 	}
 	ret = ft_deque_is_sorted_front(tmp_dq->a, n, tmp_dq->cmp_a);
+	if (ft_deque_get_size(tmp_dq->a, tmp_dq->a->front, tmp_dq->a->back) != n)
+		ret = 0;
 	ft_deque_free(tmp_op);
 	ft_dq_free(tmp_dq);
 	return (ret);

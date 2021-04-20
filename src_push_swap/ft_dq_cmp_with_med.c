@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 03:57:48 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/19 04:41:15 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/20 17:48:39 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ t_deque	*ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
 		if (dq->cmp_a(&x, &m[0]) <= 0)
 		{
 			ft_op_run_dq(dq, PB);
+			ft_op_put(PB);
 			res->val[0]++;
 		}
 		else
 		{
 			ft_op_run_dq(dq, RA);
+			ft_op_put(RA);
 		}
 		i++;
 	}
