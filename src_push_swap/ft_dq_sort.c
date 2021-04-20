@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/20 19:53:43 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 04:23:03 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ft_dq_sort(t_dq *dq)
 {
 	t_deque	*op[2];
 	int		size;
+	t_dq	*tmp;
 
 	op[0] = ft_deque_init(OPSIZE);
 	if (op[0] == NULL)
@@ -65,28 +66,29 @@ void	ft_dq_sort(t_dq *dq)
 	{
 		ft_dq_cmp_with_med_from_a_to_b(dq, dq->a->size);
 		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
-		ft_deque_put(dq->a);
-		ft_deque_put(dq->b);
-		printf("size:%d dq->a->size - size:%d\n", size, dq->a->size - size);
-		ft_dq_dfs_a(dq, size, op);
+		tmp = ft_dq_init(dq->a->size);
+		ft_dq_copy(tmp, dq);
+		while (!ft_deque_is_empty(tmp->b))
+			ft_deque_pop_front(tmp->b);
+		ft_dq_dfs_a(tmp, size, op);
 		ft_op_put_dq(op[1]);
 		_op_run_dq(dq, op[1]);
 		_init_res(op[1]);
-		ft_dq_dfs_b(dq, dq->a->size - size, op);
-		ft_deque_put(dq->a);
-		ft_deque_put(dq->b);
+		ft_dq_free(tmp);
+		tmp = ft_dq_init(dq->a->size);
+		ft_dq_copy(tmp, dq);
+		while (!ft_deque_is_empty(tmp->a))
+			ft_deque_pop_front(tmp->a);
+		ft_dq_dfs_b(tmp, dq->a->size - size, op);
 		ft_op_put_dq(op[1]);
 		_op_run_dq(dq, op[1]);
 		_init_res(op[1]);
-		ft_deque_put(dq->a);
-		ft_deque_put(dq->b);
+		ft_dq_free(tmp);
 		while (!ft_deque_is_empty(dq->b))
 		{
 			ft_op_run_dq(dq, PA);
 			ft_op_put(PA);
 		}
-		/* ft_deque_put(dq->a); */
-		/* ft_deque_put(dq->b); */
 	}
 	ft_deque_free(op[0]);
 	ft_deque_free(op[1]);
