@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/20 18:57:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:53:43 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,14 @@ void	ft_dq_sort(t_dq *dq)
 		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
 		ft_deque_put(dq->a);
 		ft_deque_put(dq->b);
+		printf("size:%d dq->a->size - size:%d\n", size, dq->a->size - size);
 		ft_dq_dfs_a(dq, size, op);
 		ft_op_put_dq(op[1]);
 		_op_run_dq(dq, op[1]);
 		_init_res(op[1]);
-		printf("dq->a->size - size:%d\n", dq->a->size - size);
 		ft_dq_dfs_b(dq, dq->a->size - size, op);
+		ft_deque_put(dq->a);
+		ft_deque_put(dq->b);
 		ft_op_put_dq(op[1]);
 		_op_run_dq(dq, op[1]);
 		_init_res(op[1]);
@@ -83,8 +85,8 @@ void	ft_dq_sort(t_dq *dq)
 			ft_op_run_dq(dq, PA);
 			ft_op_put(PA);
 		}
-		ft_deque_put(dq->a);
-		ft_deque_put(dq->b);
+		/* ft_deque_put(dq->a); */
+		/* ft_deque_put(dq->b); */
 	}
 	ft_deque_free(op[0]);
 	ft_deque_free(op[1]);
