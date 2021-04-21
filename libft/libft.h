@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:05:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 18:58:47 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/22 05:02:09 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ int		ft_deque_is_one(t_deque *dq);
 int		ft_deque_is_empty(t_deque *dq);
 int		ft_deque_is_sorted(t_deque *dq, t_cmp *cmp);
 int		ft_deque_is_sorted_front(t_deque *dq, int size, t_cmp *cmp);
+int		ft_deque_is_sorted_back(t_deque *dq, int size, t_cmp *cmp);
 void	ft_deque_swap_front(t_deque *dq);
 void	ft_deque_push_front(t_deque *dq, int item);
 void	ft_deque_push_back(t_deque *dq, int item);
