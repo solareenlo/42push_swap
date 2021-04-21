@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 21:01:16 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/22 02:17:28 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[]);
 void	ft_dq_dfs_b(t_dq *dq, int n, t_deque *op[]);
 void	ft_op_put(int op);
 void	ft_op_put_dq(t_deque *op);
+void	ft_op_run_dq_pa_ra(t_dq *dq);
 void	ft_op_run_dq(t_dq *dq, int op);
 void	ft_op_run_dq2(t_dq *dq, t_deque *op);
 void	ft_put_ope_push_to(char *s);
