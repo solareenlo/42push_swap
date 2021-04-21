@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:05 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 20:02:26 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 20:05:04 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	_dq_set_sorted(t_dq *dq)
 	ft_qsort_int(dq->sorted->val, 0, dq->a->size - 1, dq->cmp_a);
 	dq->sorted->front = dq->a->front;
 	dq->sorted->back = dq->a->back;
-	ft_deque_put(dq->sorted);
 }
 
 static void	_deque_init_a(t_deque *dq, char *argv[])
