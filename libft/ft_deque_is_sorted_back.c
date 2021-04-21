@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 04:50:36 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/22 05:06:53 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/22 05:17:35 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	_deque_is_sorted(t_deque *dq, int *size, int i, t_cmp *cmp)
 {
 	while (--(*size) && i > 0)
 	{
-		if (cmp(&dq->val[i - 1], &dq->val[i]) < 0)
+		if (cmp(&dq->val[i], &dq->val[i - 1]) < 0)
 			return (0);
 		i--;
 	}
@@ -27,7 +27,7 @@ static int	_deque_is_sorted(t_deque *dq, int *size, int i, t_cmp *cmp)
 	i = 0;
 	while (--(*size) && i > dq->front)
 	{
-		if (cmp(&dq->val[i - 1], &dq->val[i]) < 0)
+		if (cmp(&dq->val[i], &dq->val[i - 1]) < 0)
 			return (0);
 		i--;
 	}
@@ -45,9 +45,9 @@ int	ft_deque_is_sorted_back(t_deque *dq, int size, t_cmp *cmp)
 	i = dq->back;
 	if (dq->front < dq->back)
 	{
-		while (--size && i > dq->back - dq->front)
+		while (--size && i > dq->front)
 		{
-			if (cmp(&dq->val[i - 1], &dq->val[i]) < 0)
+			if (cmp(&dq->val[i], &dq->val[i - 1]) < 0)
 				return (0);
 			i--;
 		}
