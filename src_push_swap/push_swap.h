@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 20:11:42 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 21:01:16 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_dq_sort(t_dq *dq);
 void	ft_dq_sort_init_op(t_deque *op);
 void	ft_dq_sort_less_than_5(t_dq *dq, t_deque *op[]);
 void	ft_dq_sort_less_than_10(t_dq *dq, t_deque *op[]);
+int		ft_dq_cmp_with_med_from_a_to_b_first(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_b_to_a(t_dq *dq, int size);
 void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[]);

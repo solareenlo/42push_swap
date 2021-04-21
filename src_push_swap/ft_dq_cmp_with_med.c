@@ -6,26 +6,26 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 03:57:48 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 20:22:20 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 21:15:09 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
+int	ft_dq_cmp_with_med_from_a_to_b_first(t_dq *dq, int size)
 {
 	int	res;
 	int	med;
 	int	i;
-	int	x;
+	int	front;
 
 	med = ft_deque_get_median(dq->a, size, dq->cmp_a);
 	i = 0;
 	res = 0;
 	while (i < size)
 	{
-		x = ft_deque_get_front(dq->a);
-		if (dq->cmp_a(&x, &med) <= 0)
+		front = ft_deque_get_front(dq->a);
+		if (dq->cmp_a(&front, &med) <= 0)
 		{
 			ft_op_run_dq(dq, PB);
 			ft_op_put(PB);
@@ -36,6 +36,42 @@ int	ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
 			ft_op_run_dq(dq, RA);
 			ft_op_put(RA);
 		}
+		i++;
+	}
+	return (res);
+}
+
+int	ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
+{
+	int	res;
+	int	med;
+	int	i;
+	int	first;
+
+	med = ft_deque_get_median(dq->a, size, dq->cmp_a);
+	i = 0;
+	res = 0;
+	while (i < size)
+	{
+		first = ft_deque_get_front(dq->a);
+		if (dq->cmp_a(&first, &med) <= 0)
+		{
+			ft_op_run_dq(dq, PB);
+			ft_op_put(PB);
+			res++;
+		}
+		else
+		{
+			ft_op_run_dq(dq, RA);
+			ft_op_put(RA);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < size - res)
+	{
+		ft_op_run_dq(dq, RRA);
+		ft_op_put(RRA);
 		i++;
 	}
 	return (res);
