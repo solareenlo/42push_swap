@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 19:21:45 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 19:41:49 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_dq
 {
 	t_deque	*a;
 	t_deque	*b;
+	t_deque	*sorted;
 	int		(*cmp_a)(const void *a, const void *b);
 	int		(*cmp_b)(const void *a, const void *b);
 	char	*aa;
