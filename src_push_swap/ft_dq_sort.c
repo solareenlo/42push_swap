@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 04:23:03 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/21 18:47:42 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	ft_dq_sort(t_dq *dq)
 	}
 	else if (dq->a->size <= 10)
 	{
-		ft_dq_cmp_with_med_from_a_to_b(dq, dq->a->size);
+		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
+		ft_dq_cmp_with_med_from_a_to_b(dq, size);
 		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
 		tmp = ft_dq_init(dq->a->size);
 		ft_dq_copy(tmp, dq);
@@ -89,6 +90,13 @@ void	ft_dq_sort(t_dq *dq)
 			ft_op_run_dq(dq, PA);
 			ft_op_put(PA);
 		}
+	}
+	else
+	{
+		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
+		ft_dq_cmp_with_med_from_a_to_b(dq, size);
+		size = ft_deque_get_size(dq->b, dq->b->front, dq->b->back);
+		ft_dq_cmp_with_med_from_b_to_a(dq, size);
 	}
 	ft_deque_free(op[0]);
 	ft_deque_free(op[1]);
