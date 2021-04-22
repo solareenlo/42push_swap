@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/22 06:43:56 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 04:12:31 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 # define RRB	0x080
 # define RRR	0x0C0
 # define NON	0x000
-# define A		"a"
-# define B		"b"
-# define OPSIZE	9
+# define A		'a'
+# define B		'b'
+# define OPSIZE	10
 
 typedef struct s_dq
 {
@@ -38,8 +38,8 @@ typedef struct s_dq
 	t_deque	*sorted;
 	int		(*cmp_a)(const void *a, const void *b);
 	int		(*cmp_b)(const void *a, const void *b);
-	char	*aa;
-	char	*bb;
+	char	aa;
+	char	bb;
 }	t_dq;
 
 int		ft_check_int(int argc, char *argv[]);
@@ -53,6 +53,9 @@ void	ft_dq_sort(t_dq *dq);
 void	ft_dq_sort_init_op(t_deque *op);
 void	ft_dq_sort_less_than_5(t_dq *dq, t_deque *op[]);
 void	ft_dq_sort_less_than_10(t_dq *dq, t_deque *op[]);
+void	ft_dq_sort_pa_ra(t_dq *dq);
+void	ft_dq_sort_ra(t_dq *dq, t_deque *n);
+void	ft_dq_sort_rra(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_a_to_b_first(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_b_to_a(t_dq *dq, int size);

@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/22 06:45:15 by tayamamo          #+#    #+#              #
-#    Updated: 2021/04/22 06:45:15 by tayamamo         ###   ########.fr        #
+#    Created: 2021/04/23 02:51:03 by tayamamo          #+#    #+#              #
+#    Updated: 2021/04/23 02:51:03 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for push_swap, updated Thu Apr 22 06:45:15 JST 2021
+# Makefile for push_swap, updated Fri Apr 23 02:51:03 JST 2021
 
 SRC_CH := ft_check_dup.c ft_check_int.c ft_check_ope.c ft_exit.c ft_run_ope_dq.c main.c
 OBJ_CH := ft_check_dup.o ft_check_int.o ft_check_ope.o ft_exit.o ft_run_ope_dq.o main.o
 
-SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_dq_cmp_with_med.c ft_dq_copy.c ft_dq_dfs_a.c ft_dq_dfs_a_back.c ft_dq_dfs_b.c ft_dq_free.c ft_dq_init.c ft_dq_sort.c ft_dq_sort_less_than_10.c ft_dq_sort_less_than_5.c ft_dq_sort_utils.c ft_exit.c ft_op_put.c ft_op_put_dq.c ft_op_run_dq.c ft_op_run_dq_pa_ra.c ft_op_run_dq_ra.c main.c
-OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_dq_cmp_with_med.o ft_dq_copy.o ft_dq_dfs_a.o ft_dq_dfs_a_back.o ft_dq_dfs_b.o ft_dq_free.o ft_dq_init.o ft_dq_sort.o ft_dq_sort_less_than_10.o ft_dq_sort_less_than_5.o ft_dq_sort_utils.o ft_exit.o ft_op_put.o ft_op_put_dq.o ft_op_run_dq.o ft_op_run_dq_pa_ra.o ft_op_run_dq_ra.o main.o
+SRC_PS := ft_check_dup.c ft_check_int.c ft_cmp.c ft_dq_cmp_with_med.c ft_dq_copy.c ft_dq_dfs_a.c ft_dq_dfs_a_back.c ft_dq_dfs_b.c ft_dq_free.c ft_dq_init.c ft_dq_sort.c ft_dq_sort_less_than_10.c ft_dq_sort_less_than_5.c ft_dq_sort_pa_ra.c ft_dq_sort_ra.c ft_dq_sort_rra.c ft_dq_sort_utils.c ft_exit.c ft_op_put.c ft_op_put_dq.c ft_op_run_dq.c ft_op_run_dq_pa_ra.c ft_op_run_dq_ra.c main.c
+OBJ_PS := ft_check_dup.o ft_check_int.o ft_cmp.o ft_dq_cmp_with_med.o ft_dq_copy.o ft_dq_dfs_a.o ft_dq_dfs_a_back.o ft_dq_dfs_b.o ft_dq_free.o ft_dq_init.o ft_dq_sort.o ft_dq_sort_less_than_10.o ft_dq_sort_less_than_5.o ft_dq_sort_pa_ra.o ft_dq_sort_ra.o ft_dq_sort_rra.o ft_dq_sort_utils.o ft_exit.o ft_op_put.o ft_op_put_dq.o ft_op_run_dq.o ft_op_run_dq_pa_ra.o ft_op_run_dq_ra.o main.o
 
 HDR_CH := checker.h
 HDR_PS := push_swap.h
