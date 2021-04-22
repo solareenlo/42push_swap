@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:05:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/22 05:46:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/22 18:29:04 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ int		ft_array_sort4_5(int *a, t_cmp *cmp);
 int		ft_array_sort4_6(int *a, t_cmp *cmp);
 int		ft_array_get_median(int *a, size_t n, t_cmp *cmp);
 int		ft_array_get_first_quartile(int *a, size_t n, t_cmp *cmp);
+void	ft_array_reverse(int *a, int start, int end);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
@@ -135,10 +136,13 @@ int		ft_deque_get_size(t_deque *dq, int start, int end);
 int		ft_deque_get_median(t_deque *dq, int size, t_cmp *cmp);
 int		ft_deque_get_first_quartile(t_deque *dq, int size, t_cmp *cmp);
 void	ft_deque_copy(t_deque *dst, const t_deque *src);
+void	ft_deque_copy_front_back(t_deque *dst, t_deque *src,
+			int front_size, int back_size);
 void	ft_deque_put(t_deque *dq);
 int		ft_deque_sort2_front(t_deque *dq, t_cmp *cmp);
 int		ft_deque_sort3_front(t_deque *dq, t_cmp *cmp);
 int		ft_deque_sort4_front(t_deque *dq, t_cmp *cmp);
+void	ft_deque_clear(t_deque *dq);
 void	ft_deque_free(t_deque *dq);
 t_stack	*ft_stack_init(size_t n);
 int		ft_stack_is_full(t_stack *s);
