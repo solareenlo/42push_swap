@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 19:10:13 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/22 06:49:47 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 04:57:04 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_dq_sort_less_than_10(t_dq *dq, t_deque *op[])
 	t_dq	*tmp;
 
 	size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
-	ft_dq_cmp_with_med_from_a_to_b(dq, size);
+	ft_dq_cmp_with_med_from_a_to_b_first(dq, size);
 	tmp = ft_dq_init(dq->a->size);
 	ft_dq_copy(tmp, dq);
 	while (!ft_deque_is_empty(tmp->b))
