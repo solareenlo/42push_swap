@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 04:12:31 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 05:51:31 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		ft_check_int(int argc, char *argv[]);
 int		ft_check_duq(int *a, int *b, size_t n, t_cmp *cmp);
 int		ft_cmp_ascending_order(const void *a, const void *b);
 int		ft_cmp_descending_order(const void *a, const void *b);
+int		ft_deque_get_type4(t_deque *dq);
 t_dq	*ft_dq_init(int size);
 void	ft_dq_free(t_dq *dq);
 void	ft_dq_copy(t_dq *dst, t_dq *src);
