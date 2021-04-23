@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 02:37:49 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 03:13:03 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 17:31:55 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 {
 	int		size;
-	t_dq	*tmp;
 	t_deque	*op[2];
 
 	op[0] = ft_deque_init(OPSIZE);
@@ -72,15 +71,19 @@ void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 	}
 	else if (size == 4)
 	{
-	ft_putendl_fd("A", 1);
-	ft_deque_put(dq->a);
-	ft_putendl_fd("B", 1);
-	ft_deque_put(dq->b);
-		tmp = ft_dq_init(dq->a->size);
-		ft_dq_copy(tmp, dq);
-		ft_deque_copy_front_back(tmp->a, dq->a, size, dq->sorted->size - ft_deque_get_size(dq->sorted, dq->sorted->front, dq->sorted->back));
-		ft_dq_sort_init_op(op[1]);
-		ft_dq_dfs_a_back(tmp, size, op);
+		ft_putendl_fd("A", 1);
+		ft_deque_put(dq->a);
+		ft_putendl_fd("B", 1);
+		ft_deque_put(dq->b);
+		printf("type:%d\n", ft_deque_get_type4(dq->a));
+		int	type = ft_deque_get_type4(dq->a);
+		if (type == 0)
+			ft_deque_ra_type_0(dq);
+		else if (type == 1)
+			ft_deque_ra_type_1(dq);
+		else if (type == 2)
+		ft_putendl_fd("A", 1);
+		ft_deque_put(dq->a);
 		ft_op_put_dq(op[1]);
 		ft_op_run_dq2(dq, op[1]);
 		ft_deque_pop_front(n);

@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 05:37:46 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 05:51:06 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 17:19:48 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static void	_front_is_size_2(t_deque *dq, int a[4])
 
 int	ft_deque_get_type4(t_deque *dq)
 {
-	int	type;
 	int	a[4];
 
 	if (ft_deque_is_empty(dq) || ft_deque_get_size(dq, dq->front, dq->back) < 4)
