@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 17:31:05 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/23 19:43:37 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,52 @@ int		ft_cmp_descending_order(const void *a, const void *b);
 int		ft_deque_get_type4(t_deque *dq);
 void	ft_deque_ra_type_0(t_dq *dq);
 void	ft_deque_ra_type_1(t_dq *dq);
+void	ft_deque_ra_type_2(t_dq *dq);
+void	ft_deque_ra_type_3(t_dq *dq);
+void	ft_deque_ra_type_4(t_dq *dq);
+void	ft_deque_ra_type_5(t_dq *dq);
+void	ft_deque_ra_type_6(t_dq *dq);
+void	ft_deque_ra_type_7(t_dq *dq);
+void	ft_deque_ra_type_8(t_dq *dq);
+void	ft_deque_ra_type_9(t_dq *dq);
+void	ft_deque_ra_type_10(t_dq *dq);
+void	ft_deque_ra_type_11(t_dq *dq);
+void	ft_deque_ra_type_12(t_dq *dq);
+void	ft_deque_ra_type_13(t_dq *dq);
+void	ft_deque_ra_type_14(t_dq *dq);
+void	ft_deque_ra_type_15(t_dq *dq);
+void	ft_deque_ra_type_16(t_dq *dq);
+void	ft_deque_ra_type_17(t_dq *dq);
+void	ft_deque_ra_type_18(t_dq *dq);
+void	ft_deque_ra_type_19(t_dq *dq);
+void	ft_deque_ra_type_20(t_dq *dq);
+void	ft_deque_ra_type_21(t_dq *dq);
+void	ft_deque_ra_type_22(t_dq *dq);
+void	ft_deque_ra_type_23(t_dq *dq);
+void	ft_deque_pa_ra_type_0(t_dq *dq);
+void	ft_deque_pa_ra_type_1(t_dq *dq);
+void	ft_deque_pa_ra_type_2(t_dq *dq);
+void	ft_deque_pa_ra_type_3(t_dq *dq);
+void	ft_deque_pa_ra_type_4(t_dq *dq);
+void	ft_deque_pa_ra_type_5(t_dq *dq);
+void	ft_deque_pa_ra_type_6(t_dq *dq);
+void	ft_deque_pa_ra_type_7(t_dq *dq);
+void	ft_deque_pa_ra_type_8(t_dq *dq);
+void	ft_deque_pa_ra_type_9(t_dq *dq);
+void	ft_deque_pa_ra_type_10(t_dq *dq);
+void	ft_deque_pa_ra_type_11(t_dq *dq);
+void	ft_deque_pa_ra_type_12(t_dq *dq);
+void	ft_deque_pa_ra_type_13(t_dq *dq);
+void	ft_deque_pa_ra_type_14(t_dq *dq);
+void	ft_deque_pa_ra_type_15(t_dq *dq);
+void	ft_deque_pa_ra_type_16(t_dq *dq);
+void	ft_deque_pa_ra_type_17(t_dq *dq);
+void	ft_deque_pa_ra_type_18(t_dq *dq);
+void	ft_deque_pa_ra_type_19(t_dq *dq);
+void	ft_deque_pa_ra_type_20(t_dq *dq);
+void	ft_deque_pa_ra_type_21(t_dq *dq);
+void	ft_deque_pa_ra_type_22(t_dq *dq);
+void	ft_deque_pa_ra_type_23(t_dq *dq);
 t_dq	*ft_dq_init(int size);
 void	ft_dq_free(t_dq *dq);
 void	ft_dq_copy(t_dq *dst, t_dq *src);
