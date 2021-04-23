@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 03:57:48 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 21:15:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/24 05:13:28 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_dq_cmp_with_med_from_a_to_b_first(t_dq *dq, int size)
 		}
 		i++;
 	}
-	return (res);
+	return (size - res);
 }
 
 int	ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
@@ -74,7 +74,7 @@ int	ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size)
 		ft_op_put(RRA);
 		i++;
 	}
-	return (res);
+	return (size - res);
 }
 
 int	ft_dq_cmp_with_med_from_b_to_a(t_dq *dq, int size)

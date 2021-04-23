@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/24 00:25:51 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/24 05:14:32 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,6 @@ void	ft_dq_sort(t_dq *dq)
 			ft_op_run_dq_ra(dq);
 			size++;
 		}
-	ft_putendl_fd("A", 1);
-	ft_deque_put(dq->a);
-	ft_putendl_fd("B", 1);
-	ft_deque_put(dq->b);
 		while (size > 0)
 		{
 			ret = ft_deque_get_front(n);
@@ -66,19 +62,21 @@ void	ft_dq_sort(t_dq *dq)
 		ft_dq_sort_ra(dq, n);
 		size = ft_deque_get_front(n);
 		ft_deque_pop_front(n);
-		ret = ft_dq_cmp_with_med_from_a_to_b_first(dq, size);
+		ret = ft_dq_cmp_with_med_from_a_to_b(dq, size);
 		ft_deque_push_front(n, ret);
-		ft_dq_sort_rra(dq, size - ret);
-	ft_putendl_fd("A", 1);
+	ft_putendl_fd("A2", 1);
 	ft_deque_put(dq->a);
-	ft_putendl_fd("B", 1);
+	ft_putendl_fd("B2", 1);
 	ft_deque_put(dq->b);
 		ft_dq_sort_pa_ra(dq);
-	ft_putendl_fd("A", 1);
+	ft_putendl_fd("A3", 1);
 	ft_deque_put(dq->a);
-	ft_putendl_fd("B", 1);
+	ft_putendl_fd("B3", 1);
 	ft_deque_put(dq->b);
+	ft_putstr_fd("n:", 1);
+	ft_deque_put(n);
 		ft_dq_sort_ra(dq, n);
+		ft_deque_free(n);
 	}
 	ft_deque_free(op[0]);
 	ft_deque_free(op[1]);
