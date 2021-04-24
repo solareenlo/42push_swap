@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 04:30:06 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 04:46:09 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 void	ft_dq_sort(t_dq *dq)
 {
-	t_deque	*op[2];
 	int		size;
 	int		ret;
 	t_deque	*n;
 
-	op[0] = ft_deque_init(OPSIZE);
-	if (op[0] == NULL)
-		ft_exit("Error\n");
-	op[1] = ft_deque_init(OPSIZE);
-	if (op[1] == NULL)
-		ft_exit("Error\n");
-	ft_dq_sort_init_op(op[1]);
 	if (dq->a->size <= 5)
 		ft_dq_sort_less_than_5(dq);
 	else if (dq->a->size <= 10)
-		ft_dq_sort_less_than_10(dq, op);
+		ft_dq_sort_less_than_10(dq);
 	else
 	{
 		n = ft_deque_init(dq->a->size);
@@ -68,6 +60,4 @@ void	ft_dq_sort(t_dq *dq)
 		ft_dq_sort_ra(dq, n);
 		ft_deque_free(n);
 	}
-	ft_deque_free(op[0]);
-	ft_deque_free(op[1]);
 }
