@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 05:00:20 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 04:51:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 00:17:07 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
 
 	size = ft_deque_get_size(op[0], op[0]->front, op[0]->back);
 	mini = ft_deque_get_size(op[1], op[1]->front, op[1]->back);
-	if (size >= n * 2 - 1)
+	if (size >= mini || size >= n * 2 - 1)
 		return ;
 	if (ft_deque_is_sorted_front(dq->a, n, dq->cmp_a))
 		return ;
