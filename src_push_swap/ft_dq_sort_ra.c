@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 02:37:49 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/24 22:53:59 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 05:00:52 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 {
 	int		size;
+	int		type;
 	t_deque	*op[2];
 
 	op[0] = ft_deque_init(OPSIZE);
@@ -84,7 +85,8 @@ void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 				if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
 				{
 					ft_op_run_dq_ra(dq);
-					if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+					if (ft_deque_get_front(dq->sorted)
+						== ft_deque_get_front(dq->a))
 					{
 						ft_op_run_dq_ra(dq);
 						ft_op_run_dq_pa_ra(dq);
@@ -101,7 +103,7 @@ void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 	}
 	else if (size == 4)
 	{
-		int	type = ft_deque_get_type4(dq->a);
+		type = ft_deque_get_type4(dq->a);
 		if (type == 0)
 			ft_deque_ra_type_0(dq);
 		else if (type == 1)

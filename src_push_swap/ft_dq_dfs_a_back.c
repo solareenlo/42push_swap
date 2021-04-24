@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 06:38:41 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 04:25:08 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 05:16:14 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	_run_op(t_dq *dq, int n, t_deque *op)
 	}
 	ret = ft_deque_is_sorted(tmp_dq->a, tmp_dq->cmp_a);
 	if (ft_deque_get_size(tmp_dq->a, tmp_dq->a->front, tmp_dq->a->back)
-			!= n + tmp_dq->sorted->size - ft_deque_get_size(dq->sorted, dq->sorted->front, dq->sorted->back))
+		!= n + tmp_dq->sorted->size - ft_deque_get_size(dq->sorted, dq->sorted->front, dq->sorted->back))
 		ret = 0;
 	ft_deque_free(tmp_op);
 	ft_dq_free(tmp_dq);
@@ -105,7 +105,7 @@ void	ft_dq_dfs_a_back(t_dq *dq, int n, t_deque *op[])
 			_do_dfs(dq, n, op, SB);
 	if (_get_size(dq, op[0], A) > 1 && _get_size(dq, op[0], B) > 1)
 		if (ft_deque_get_back(op[0]) != SB
-				&& ft_deque_get_back(op[0]) != SA
-				&& ft_deque_get_back(op[0]) != SS)
+			&& ft_deque_get_back(op[0]) != SA
+			&& ft_deque_get_back(op[0]) != SS)
 			_do_dfs(dq, n, op, SS);
 }

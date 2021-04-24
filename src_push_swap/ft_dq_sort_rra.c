@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 02:32:46 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 02:33:19 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 04:59:05 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_dq_sort_rra(t_dq *dq, int size)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < size)
 	{
 		ft_op_run_dq(dq, RRA);
