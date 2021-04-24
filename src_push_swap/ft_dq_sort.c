@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/24 23:11:19 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 04:30:06 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_dq_sort(t_dq *dq)
 		ft_exit("Error\n");
 	ft_dq_sort_init_op(op[1]);
 	if (dq->a->size <= 5)
-		ft_dq_sort_less_than_5(dq, op);
+		ft_dq_sort_less_than_5(dq);
 	else if (dq->a->size <= 10)
 		ft_dq_sort_less_than_10(dq, op);
 	else
