@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 02:37:49 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 19:45:35 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/24 22:53:59 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,44 +27,74 @@ void	ft_dq_sort_ra(t_dq *dq, t_deque *n)
 	size = ft_deque_get_front(n);
 	if (size == 2)
 	{
-		ft_op_run_dq(dq, SA);
-		ft_op_put(SA);
-		ft_op_run_dq_ra(dq);
-		ft_op_run_dq_ra(dq);
-		ft_deque_pop_front(n);
-	}
-	else if (size == 3)
-	{
-		ft_op_run_dq(dq, PB);
-		ft_op_put(PB);
 		if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
 		{
 			ft_op_run_dq_ra(dq);
-			if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
-			{
-				ft_op_run_dq_ra(dq);
-				ft_op_run_dq_pa_ra(dq);
-			}
-			else
-			{
-				ft_op_run_dq_pa_ra(dq);
-				ft_op_run_dq_ra(dq);
-			}
+			ft_op_run_dq_ra(dq);
 		}
 		else
 		{
 			ft_op_run_dq(dq, SA);
 			ft_op_put(SA);
 			ft_op_run_dq_ra(dq);
+			ft_op_run_dq_ra(dq);
+		}
+		ft_deque_pop_front(n);
+	}
+	else if (size == 3)
+	{
+		if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+		{
+			ft_op_run_dq_ra(dq);
 			if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
 			{
 				ft_op_run_dq_ra(dq);
-				ft_op_run_dq_pa_ra(dq);
+				ft_op_run_dq_ra(dq);
 			}
 			else
 			{
-				ft_op_run_dq_pa_ra(dq);
+				ft_op_run_dq(dq, SA);
+				ft_op_put(SA);
 				ft_op_run_dq_ra(dq);
+				ft_op_run_dq_ra(dq);
+			}
+		}
+		else
+		{
+			ft_op_run_dq(dq, PB);
+			ft_op_put(PB);
+			if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+			{
+				ft_op_run_dq_ra(dq);
+				if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+				{
+					ft_op_run_dq_ra(dq);
+					ft_op_run_dq_pa_ra(dq);
+				}
+				else
+				{
+					ft_op_run_dq_pa_ra(dq);
+					ft_op_run_dq_ra(dq);
+				}
+			}
+			else
+			{
+				ft_op_run_dq(dq, SA);
+				ft_op_put(SA);
+				if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+				{
+					ft_op_run_dq_ra(dq);
+					if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+					{
+						ft_op_run_dq_ra(dq);
+						ft_op_run_dq_pa_ra(dq);
+					}
+					else
+					{
+						ft_op_run_dq_pa_ra(dq);
+						ft_op_run_dq_ra(dq);
+					}
+				}
 			}
 		}
 		ft_deque_pop_front(n);
