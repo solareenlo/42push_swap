@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 22:40:35 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 03:47:25 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,41 @@ void	ft_dq_sort(t_dq *dq)
 		size = ft_deque_get_size(dq->a, dq->a->front, dq->a->back);
 		ret = ft_dq_cmp_with_med_from_a_to_b_first(dq, size);
 		ft_deque_push_front(n, ret);
-		size = ft_deque_get_size(dq->b, dq->b->front, dq->b->back);
-		while (size > 3)
+		while (!ft_deque_is_empty(n))
 		{
-			ret = ft_dq_cmp_with_med_from_b_to_a(dq, size);
 			size = ft_deque_get_size(dq->b, dq->b->front, dq->b->back);
-			if (ret != 0)
-				ft_deque_push_front(n, ret);
-		}
-		ft_dq_sort_pa_ra(dq);
-		size = 0;
-		while (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
-		{
-			ft_op_run_dq_ra(dq);
-			size++;
-		}
-		while (size > 0)
-		{
-			ret = ft_deque_get_front(n);
-			ft_deque_pop_front(n);
-			if (size < ret)
-				ft_deque_push_front(n, ret - size);
-			size -= ret;
-		}
-		ft_dq_sort_ra(dq, n);
-		if (!ft_deque_is_empty(n))
-		{
-			size = ft_deque_get_front(n);
-			ft_deque_pop_front(n);
-			ret = ft_dq_cmp_with_med_from_a_to_b(dq, size);
-			ft_deque_push_front(n, ret);
+			while (size > 3)
+			{
+				ret = ft_dq_cmp_with_med_from_b_to_a(dq, size);
+				size = ft_deque_get_size(dq->b, dq->b->front, dq->b->back);
+				if (ret != 0)
+					ft_deque_push_front(n, ret);
+			}
 			ft_dq_sort_pa_ra(dq);
+			size = 0;
+			while (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+			{
+				ft_op_run_dq_ra(dq);
+				size++;
+			}
+			while (size > 0)
+			{
+				ret = ft_deque_get_front(n);
+				ft_deque_pop_front(n);
+				if (size < ret)
+					ft_deque_push_front(n, ret - size);
+				size -= ret;
+			}
 			ft_dq_sort_ra(dq, n);
+			if (!ft_deque_is_empty(n))
+			{
+				size = ft_deque_get_front(n);
+				ft_deque_pop_front(n);
+				ret = ft_dq_cmp_with_med_from_a_to_b(dq, size);
+				ft_deque_push_front(n, ret);
+				ft_dq_sort_pa_ra(dq);
+				ft_dq_sort_ra(dq, n);
+			}
 		}
 		ft_deque_free(n);
 	}
