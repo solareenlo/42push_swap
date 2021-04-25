@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 04:46:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/25 22:40:35 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,15 @@ void	ft_dq_sort(t_dq *dq)
 			size -= ret;
 		}
 		ft_dq_sort_ra(dq, n);
-		size = ft_deque_get_front(n);
-		ft_deque_pop_front(n);
-		ret = ft_dq_cmp_with_med_from_a_to_b(dq, size);
-		ft_deque_push_front(n, ret);
-		ft_dq_sort_pa_ra(dq);
-		ft_dq_sort_ra(dq, n);
+		if (!ft_deque_is_empty(n))
+		{
+			size = ft_deque_get_front(n);
+			ft_deque_pop_front(n);
+			ret = ft_dq_cmp_with_med_from_a_to_b(dq, size);
+			ft_deque_push_front(n, ret);
+			ft_dq_sort_pa_ra(dq);
+			ft_dq_sort_ra(dq, n);
+		}
 		ft_deque_free(n);
 	}
 }
