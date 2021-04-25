@@ -1,6 +1,6 @@
 #!/bin/bash
-N=64
-M=11
+N=32
+M=100
 
 for i in `seq 1 $N`
 do
