@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:58:24 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/23 18:16:40 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 07:54:46 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_deque_ra_type_20(t_dq *dq)
 {
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, SA);
-	ft_op_put(SA);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_sa(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_ra(dq);
@@ -26,12 +24,9 @@ void	ft_deque_ra_type_20(t_dq *dq)
 
 void	ft_deque_ra_type_21(t_dq *dq)
 {
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, SA);
-	ft_op_put(SA);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_sa(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_pa_ra(dq);
 	ft_op_run_dq_ra(dq);
@@ -40,10 +35,8 @@ void	ft_deque_ra_type_21(t_dq *dq)
 
 void	ft_deque_ra_type_22(t_dq *dq)
 {
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_pb(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_pa_ra(dq);
@@ -52,12 +45,9 @@ void	ft_deque_ra_type_22(t_dq *dq)
 
 void	ft_deque_ra_type_23(t_dq *dq)
 {
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, PB);
-	ft_op_put(PB);
-	ft_op_run_dq(dq, SA);
-	ft_op_put(SA);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_pb(dq);
+	ft_op_run_dq_sa(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_ra(dq);
 	ft_op_run_dq_pa_ra(dq);

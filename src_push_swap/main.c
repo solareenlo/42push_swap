@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:05 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 21:46:49 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 07:35:13 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,6 @@ int	main(int argc, char *argv[])
 		return (ft_exit("Error dup\n"));
 	if (ft_array_is_sorted(dq->a->val, dq->a->size, dq->cmp_a) == 0)
 		ft_dq_sort(dq);
-	/* ft_putendl_fd("A", 1); */
-	/* ft_deque_put(dq->a); */
-	/* ft_putendl_fd("B", 1); */
-	/* ft_deque_put(dq->b); */
 	ft_dq_free(dq);
 	return (0);
 }

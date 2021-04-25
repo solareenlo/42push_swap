@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 05:27:23 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 07:44:21 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,13 @@ void	ft_dq_sort_init_op(t_deque *op);
 void	ft_dq_sort_less_than_5(t_dq *dq);
 void	ft_dq_sort_less_than_10(t_dq *dq);
 void	ft_dq_sort_pa_ra(t_dq *dq);
+void	ft_dq_sort_pa_ra_2(t_dq *dq);
+void	ft_dq_sort_pa_ra_3(t_dq *dq);
+void	ft_dq_sort_pa_ra_4(t_dq *dq);
 void	ft_dq_sort_ra(t_dq *dq, t_deque *n);
+void	ft_dq_sort_ra_2(t_dq *dq, t_deque *n);
+void	ft_dq_sort_ra_3(t_dq *dq, t_deque *n);
+void	ft_dq_sort_ra_4(t_dq *dq, t_deque *n);
 void	ft_dq_sort_rra(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_a_to_b_first(t_dq *dq, int size);
 int		ft_dq_cmp_with_med_from_a_to_b(t_dq *dq, int size);
@@ -113,9 +119,13 @@ void	ft_dq_dfs_a_back(t_dq *dq, int n, t_deque *op[]);
 void	ft_dq_dfs_b(t_dq *dq, int n, t_deque *op[]);
 void	ft_op_put(int op);
 void	ft_op_put_dq(t_deque *op);
+void	ft_op_run_dq_pb(t_dq *dq);
+void	ft_op_run_dq_sb(t_dq *dq);
 void	ft_op_run_dq_rb(t_dq *dq);
 void	ft_op_run_dq_pa(t_dq *dq);
+void	ft_op_run_dq_sa(t_dq *dq);
 void	ft_op_run_dq_ra(t_dq *dq);
+void	ft_op_run_dq_ss(t_dq *dq);
 void	ft_op_run_dq_pa_ra(t_dq *dq);
 void	ft_op_run_dq(t_dq *dq, int op);
 void	ft_op_run_dq2(t_dq *dq, t_deque *op);
