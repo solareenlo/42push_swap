@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_op_run_dq_pa_ra.c                               :+:      :+:    :+:   */
+/*   ft_op_run_dq_rb.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 02:16:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 05:27:43 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/04/26 05:25:49 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/04/26 05:26:03 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_op_run_dq_pa_ra(t_dq *dq)
+void	ft_op_run_dq_rb(t_dq *dq)
 {
-	ft_op_run_dq_pa(dq);
-	ft_op_run_dq_ra(dq);
+	ft_op_run_dq(dq, RB);
+	ft_op_put(RB);
 }
