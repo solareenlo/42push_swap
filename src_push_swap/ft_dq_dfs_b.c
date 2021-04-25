@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:13:57 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 00:22:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 05:44:02 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,34 @@ static void	_do_dfs(t_dq *dq, int n, t_deque *op[], int ope)
 	ft_deque_pop_back(op[0]);
 }
 
+static void	_do_dfs_sa_rra_ra_sb_rrb_rb(t_dq *dq, int n, t_deque *op[])
+{
+	if (_get_size(dq, op[0], A) > 0)
+	{
+		_do_dfs(dq, n, op, PB);
+		if (_get_size(dq, op[0], A) > 1)
+		{
+			if (ft_deque_get_back(op[0]) != SA)
+				_do_dfs(dq, n, op, SA);
+			if (ft_deque_get_back(op[0]) != RRA)
+				_do_dfs(dq, n, op, RA);
+			if (ft_deque_get_back(op[0]) != RA)
+				_do_dfs(dq, n, op, RRA);
+		}
+	}
+	if (_get_size(dq, op[0], B) > 0)
+		_do_dfs(dq, n, op, PA);
+	if (_get_size(dq, op[0], B) > 1)
+	{
+		if (ft_deque_get_back(op[0]) != SB)
+			_do_dfs(dq, n, op, SB);
+		if (ft_deque_get_back(op[0]) != RRB)
+			_do_dfs(dq, n, op, RB);
+		if (ft_deque_get_back(op[0]) != RB)
+			_do_dfs(dq, n, op, RRB);
+	}
+}
+
 void	ft_dq_dfs_b(t_dq *dq, int n, t_deque *op[])
 {
 	int	mini;
@@ -87,28 +115,7 @@ void	ft_dq_dfs_b(t_dq *dq, int n, t_deque *op[])
 			ft_deque_copy(op[1], op[0]);
 		return ;
 	}
-	if (_get_size(dq, op[0], A) > 0)
-		_do_dfs(dq, n, op, PB);
-	if (_get_size(dq, op[0], A) > 1)
-	{
-		if (ft_deque_get_back(op[0]) != SA)
-			_do_dfs(dq, n, op, SA);
-		if (ft_deque_get_back(op[0]) != RRA)
-			_do_dfs(dq, n, op, RA);
-		if (ft_deque_get_back(op[0]) != RA)
-			_do_dfs(dq, n, op, RRA);
-	}
-	if (_get_size(dq, op[0], B) > 0)
-		_do_dfs(dq, n, op, PA);
-	if (_get_size(dq, op[0], B) > 1)
-	{
-		if (ft_deque_get_back(op[0]) != SB)
-			_do_dfs(dq, n, op, SB);
-		if (ft_deque_get_back(op[0]) != RRB)
-			_do_dfs(dq, n, op, RB);
-		if (ft_deque_get_back(op[0]) != RB)
-			_do_dfs(dq, n, op, RRB);
-	}
+	_do_dfs_sa_rra_ra_sb_rrb_rb(dq, n, op);
 	if (_get_size(dq, op[0], A) > 1 && _get_size(dq, op[0], B) > 1)
 	{
 		if (ft_deque_get_back(op[0]) != SB)

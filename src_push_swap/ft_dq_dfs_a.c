@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 05:00:20 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/25 00:17:07 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 05:39:30 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,8 @@ static void	_do_dfs(t_dq *dq, int n, t_deque *op[], int ope)
 	ft_deque_pop_back(op[0]);
 }
 
-void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
+static void	_do_dfs_sa_rra_ra_sb_rrb_rb(t_dq *dq, int n, t_deque *op[])
 {
-	int	mini;
-	int	size;
-
-	size = ft_deque_get_size(op[0], op[0]->front, op[0]->back);
-	mini = ft_deque_get_size(op[1], op[1]->front, op[1]->back);
-	if (size >= mini || size >= n * 2 - 1)
-		return ;
-	if (ft_deque_is_sorted_front(dq->a, n, dq->cmp_a))
-		return ;
-	if (_run_op(dq, n, op[0]) == 1)
-	{
-		if (mini > ft_deque_get_size(op[0], op[0]->front, op[0]->back))
-			ft_deque_copy(op[1], op[0]);
-		return ;
-	}
 	if (_get_size(dq, op[0], A) > 0)
 	{
 		_do_dfs(dq, n, op, PB);
@@ -111,6 +96,26 @@ void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
 		if (ft_deque_get_back(op[0]) != RB)
 			_do_dfs(dq, n, op, RRB);
 	}
+}
+
+void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
+{
+	int	mini;
+	int	size;
+
+	size = ft_deque_get_size(op[0], op[0]->front, op[0]->back);
+	mini = ft_deque_get_size(op[1], op[1]->front, op[1]->back);
+	if (size >= mini || size >= n * 2 - 1)
+		return ;
+	if (ft_deque_is_sorted_front(dq->a, n, dq->cmp_a))
+		return ;
+	if (_run_op(dq, n, op[0]) == 1)
+	{
+		if (mini > ft_deque_get_size(op[0], op[0]->front, op[0]->back))
+			ft_deque_copy(op[1], op[0]);
+		return ;
+	}
+	_do_dfs_sa_rra_ra_sb_rrb_rb(dq, n, op);
 	if (_get_size(dq, op[0], A) > 1 && _get_size(dq, op[0], B) > 1)
 	{
 		if (ft_deque_get_back(op[0]) != SS)

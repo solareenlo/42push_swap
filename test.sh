@@ -1,6 +1,6 @@
 #!/bin/bash
 N=70
-M=54
+M=8
 
 for i in `seq 1 $N`
 do
