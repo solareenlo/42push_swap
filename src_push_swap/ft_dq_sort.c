@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 06:43:08 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 21:05:04 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,12 @@ void	ft_dq_sort(t_dq *dq)
 		while (!ft_deque_is_empty(n))
 		{
 			_sort_pa_ra(dq, n);
+			ft_putstr_fd("A:", 1);
+			ft_deque_put(dq->a);
+			ft_putstr_fd("B:", 1);
+			ft_deque_put(dq->b);
+			ft_putstr_fd("n:", 1);
+			ft_deque_put(n);
 			_sort_front_of_a_is_mini(dq, n);
 			if (ft_deque_get_front(n) < 5)
 				ft_dq_sort_ra(dq, n);

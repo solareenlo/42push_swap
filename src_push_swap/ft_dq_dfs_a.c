@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 05:00:20 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 05:39:30 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/26 21:16:01 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,9 @@ void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
 	{
 		if (ft_deque_get_back(op[0]) != SS)
 			_do_dfs(dq, n, op, SS);
-		if (ft_deque_get_back(op[0]) != RRR)
-			_do_dfs(dq, n, op, RR);
-		if (ft_deque_get_back(op[0]) != RR)
-			_do_dfs(dq, n, op, RRR);
+		/* if (ft_deque_get_back(op[0]) != RRR) */
+		/* 	_do_dfs(dq, n, op, RR); */
+		/* if (ft_deque_get_back(op[0]) != RR) */
+		/* 	_do_dfs(dq, n, op, RRR); */
 	}
 }
