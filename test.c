@@ -16,19 +16,19 @@ int	ft_cmp_ascending_order(const void *a, const void *b)
 		return (0);
 }
 
-static void	ft_array_put(int a[], int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		ft_putnbr_fd(a[i], 1);
-		ft_putstr_fd(" ", 1);
-		i++;
-	}
-	ft_putstr_fd("\n", 1);
-}
+/* static void	ft_array_put(int a[], int size) */
+/* { */
+/* 	int	i; */
+/*  */
+/* 	i = 0; */
+/* 	while (i < size) */
+/* 	{ */
+/* 		ft_putnbr_fd(a[i], 1); */
+/* 		ft_putstr_fd(" ", 1); */
+/* 		i++; */
+/* 	} */
+/* 	ft_putstr_fd("\n", 1); */
+/* } */
 
 int	ft_array_get_type5(int a[5], t_cmp *cmp)
 {
@@ -259,9 +259,115 @@ int	ft_array_get_type5(int a[5], t_cmp *cmp)
 				return (76);
 			return (77);
 	}
-				ft_array_put(a, 5);
-				return (200);
-	return (-1);
+	if (cmp(&a[0], &a[3]) < 0)
+	{
+		if (cmp(&a[1], &a[2]) < 0)
+		{
+			if (cmp(&a[4], &a[1]) < 0)
+				return (81);
+			if (cmp(&a[0], &a[4]) < 0)
+			{
+				if (cmp(&a[3], &a[4]) < 0)
+					return (48);
+				return (49);
+			}
+				if (cmp(&a[2], &a[4]) < 0)
+					return (73);
+				return (75);
+		}
+		if (cmp(&a[4], &a[2]) < 0)
+			return (87);
+		if (cmp(&a[0], &a[4]) < 0)
+		{
+			if (cmp(&a[3], &a[4]) < 0)
+				return (54);
+			return (55);
+		}
+		if (cmp(&a[1], &a[4]) < 0)
+			return (79);
+		return (85);
+	}
+	if (cmp(&a[0], &a[4]) < 0)
+	{
+		if (cmp(&a[1], &a[2]) < 0)
+		{
+			if (cmp(&a[3], &a[1]) < 0)
+				return (80);
+			if (cmp(&a[2], &a[3]) < 0)
+				return (72);
+			return (74);
+		}
+		if (cmp(&a[3], &a[2]) < 0)
+			return (86);
+		if (cmp(&a[1], &a[3]) < 0)
+			return (78);
+		return (84);
+	}
+	if (cmp(&a[1], &a[2]) < 0)
+	{
+		if (cmp(&a[3], &a[4]) < 0)
+		{
+			if (cmp(&a[1], &a[3]) < 0)
+			{
+				if (cmp(&a[2], &a[3]) < 0)
+					return (96);
+				if (cmp(&a[2], &a[4]) < 0)
+					return (98);
+				return (100);
+			}
+			if (cmp(&a[4], &a[1]) < 0)
+				return (112);
+			if (cmp(&a[2], &a[4]) < 0)
+				return (104);
+			return (106);
+		}
+		if (cmp(&a[1], &a[4]) < 0)
+		{
+			if (cmp(&a[3], &a[2]) < 0)
+				return (101);
+			if (cmp(&a[2], &a[4]) < 0)
+				return (97);
+			return (99);
+		}
+		if (cmp(&a[3], &a[1]) < 0)
+			return (113);
+		if (cmp(&a[2], &a[3]) < 0)
+			return (105);
+		return (107);
+	}
+	if (cmp(&a[2], &a[3]) < 0)
+	{
+		if (cmp(&a[1], &a[4]) < 0)
+		{
+			if (cmp(&a[1], &a[3]) < 0)
+			{
+				if (cmp(&a[3], &a[4]) < 0)
+					return (102);
+				return (103);
+			}
+			return (108);
+		}
+		if (cmp(&a[2], &a[4]) < 0)
+		{
+			if (cmp(&a[3], &a[4]) < 0)
+				return (114);
+			if (cmp(&a[1], &a[3]) < 0)
+				return (109);
+			return (115);
+		}
+		if (cmp(&a[1], &a[3]) < 0)
+			return (111);
+		return (117);
+	}
+	if (cmp(&a[2], &a[4]) < 0)
+	{
+		if (cmp(&a[1], &a[4]) < 0)
+			return (110);
+		return (116);
+	}
+	if (cmp(&a[3], &a[4]) < 0)
+		return (118);
+	return (119);
 }
 
 int	main(void)
@@ -273,9 +379,7 @@ int	main(void)
 	while (i < 120)
 	{
 		int	ret = ft_array_get_type5(a[i], ft_cmp_ascending_order);
-		/* if (ret != -1) */
-		if (ret >= 200)
-			printf("ret:%d\n", ret);
+		printf("ret:%d\n", ret);
 		i++;
 	}
 	return (0);
