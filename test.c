@@ -226,16 +226,41 @@ int	ft_array_get_type5(int a[5], t_cmp *cmp)
 			if (cmp(&a[3], &a[1]) < 0)
 				return (89);
 			if (cmp(&a[0], &a[3]) < 0)
-			{
-				ft_array_put(a, 5);
-				return (200);
-			}
-				ft_array_put(a, 5);
-				return (201);
+				return (59);
+			return (83);
 		}
+		if (cmp(&a[3], &a[1]) < 0)
+		{
+			if (cmp(&a[4], &a[0]) < 0)
+				return (82);
+			if (cmp(&a[2], &a[4]) < 0)
+				return (56);
+			return (58);
+		}
+		if (cmp(&a[0], &a[3]) < 0)
+		{
+			if (cmp(&a[3], &a[4]) < 0)
+			{
+				if (cmp(&a[2], &a[4]) < 0)
+					return (26);
+				return (28);
+			}
+			if (cmp(&a[0], &a[4]) < 0)
+				return (29);
+			return (53);
+		}
+			if (cmp(&a[0], &a[4]) < 0)
+			{
+				if (cmp(&a[2], &a[4]) < 0)
+					return (50);
+				return (52);
+			}
+			if (cmp(&a[3], &a[4]) < 0)
+				return (76);
+			return (77);
+	}
 				ft_array_put(a, 5);
 				return (200);
-	}
 	return (-1);
 }
 
