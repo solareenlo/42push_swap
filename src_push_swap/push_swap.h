@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 22:26:22 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 08:15:32 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,14 @@ int		ft_check_duq(int *a, int *b, size_t n, t_cmp *cmp);
 int		ft_cmp_ascending_order(const void *a, const void *b);
 int		ft_cmp_descending_order(const void *a, const void *b);
 int		ft_deque_get_type4(t_deque *dq);
-int		ft_deque_get_type5(t_deque *dq);
+int		ft_deque_get_type5(t_deque *dq, t_cmp *cmp);
 int		ft_array_get_type5(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_1(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_2(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_3(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_4(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_5(int a[5], t_cmp *cmp);
 void	ft_deque_ra_type_0(t_dq *dq);
 void	ft_deque_ra_type_1(t_dq *dq);
 void	ft_deque_ra_type_2(t_dq *dq);

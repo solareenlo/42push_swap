@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 21:40:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 22:08:57 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 08:15:18 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ static void	_front_is_size_4(t_deque *dq, int a[4])
 	a[4] = dq->val[0];
 }
 
-int	ft_deque_get_type5(t_deque *dq)
+int	ft_deque_get_type5(t_deque *dq, t_cmp *cmp)
 {
 	int	a[5];
 
@@ -193,5 +193,5 @@ int	ft_deque_get_type5(t_deque *dq)
 		a[3] = dq->val[dq->front + 3];
 		a[4] = dq->val[dq->front + 4];
 	}
-	return (0);
+	return (ft_array_get_type5(a, cmp));
 }
