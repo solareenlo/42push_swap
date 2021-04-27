@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:03:10 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/11 23:11:07 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 04:04:59 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static inline void	_ret_is_1(t_deque *a, t_deque *b, char *op)
 	if (ft_check_ope(op) == 1)
 		ft_run_ope_dq(a, b, op);
 	else
-		ft_exit("Error op\n");
+		ft_exit("Error\n");
 }
 
 static inline void	read_operation(t_deque *a, t_deque *b)
@@ -56,7 +56,7 @@ static inline void	read_operation(t_deque *a, t_deque *b)
 	{
 		ret = get_next_line(0, &op);
 		if (ret == -1)
-			ft_exit("Error gnl\n");
+			ft_exit("Error\n");
 		if (ret == 0)
 		{
 			if (op[0] == '\0')
@@ -64,7 +64,7 @@ static inline void	read_operation(t_deque *a, t_deque *b)
 			if (ft_check_ope(op) == 1)
 				ft_run_ope_dq(a, b, op);
 			else
-				ft_exit("Error op\n");
+				ft_exit("Error\n");
 			break ;
 		}
 		if (ret == 1)
@@ -81,22 +81,21 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	if (ft_check_int(argc, argv) == 1)
-		return (ft_put_error("Error int\n"));
+		return (ft_put_error("Error\n"));
 	dq[0] = ft_deque_init(argc - 1);
 	if (dq[0] == NULL)
-		ft_exit("Error malloc\n");
+		ft_exit("Error\n");
 	_deque_init(dq[0], argv);
 	dq[1] = ft_deque_init(argc - 1);
 	if (dq[1] == NULL)
-		ft_exit("Error malloc\n");
+		ft_exit("Error\n");
 	if (ft_check_dup(dq[0]->val, dq[1]->val, dq[0]->back + 1, cmp) == 1)
 		ft_exit("Error dup\n");
 	read_operation(dq[0], dq[1]);
 	if (ft_deque_is_sorted(dq[0], cmp) && ft_deque_is_full(dq[0]))
-		ft_putstr_fd("OK ", 1);
+		ft_putendl_fd("OK", 1);
 	else
-		ft_putstr_fd("NG ", 1);
-	ft_deque_put(dq[0]);
+		ft_putendl_fd("NG", 1);
 	ft_deque_free(dq[0]);
 	ft_deque_free(dq[1]);
 	return (0);
