@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 05:00:20 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 08:21:47 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 11:01:20 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ static void	_do_dfs_sa_rra_ra_sb_rrb_rb(t_dq *dq, int n, t_deque *op[])
 			_do_dfs(dq, n, op, SB);
 		if (ft_deque_get_back(op[0]) != RRB)
 			_do_dfs(dq, n, op, RB);
-		if (ft_deque_get_back(op[0]) != RB)
-			_do_dfs(dq, n, op, RRB);
+		/* if (ft_deque_get_back(op[0]) != RB) */
+		/* 	_do_dfs(dq, n, op, RRB); */
 	}
 }
 
@@ -120,9 +120,9 @@ void	ft_dq_dfs_a(t_dq *dq, int n, t_deque *op[])
 	{
 		if (ft_deque_get_back(op[0]) != SS)
 			_do_dfs(dq, n, op, SS);
-		if (ft_deque_get_back(op[0]) != RRR)
-			_do_dfs(dq, n, op, RR);
-		if (ft_deque_get_back(op[0]) != RR)
-			_do_dfs(dq, n, op, RRR);
+		/* if (ft_deque_get_back(op[0]) != RRR) */
+		/* 	_do_dfs(dq, n, op, RR); */
+		/* if (ft_deque_get_back(op[0]) != RR) */
+		/* 	_do_dfs(dq, n, op, RRR); */
 	}
 }
