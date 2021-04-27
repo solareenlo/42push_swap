@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:34:32 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/21 19:43:15 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 08:09:05 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	*_dq_free(t_dq *dq)
 {
 	if (dq->a != NULL)
-		free(dq->a);
+		ft_deque_free(dq->a);
 	if (dq->b != NULL)
-		free(dq->b);
+		ft_deque_free(dq->b);
 	if (dq != NULL)
 		free(dq);
 	return (NULL);
