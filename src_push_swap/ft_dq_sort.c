@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 01:40:14 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 02:27:50 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,6 @@ static void	_sort_pa_ra(t_dq *dq, t_deque *n)
 			ft_deque_push_front(n, ret);
 	}
 	ft_dq_sort_pa_ra(dq);
-}
-
-static void	_sort_front_of_a_is_mini(t_dq *dq, t_deque *n)
-{
-	int	size;
-	int	ret;
-
-	size = 0;
-	while (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
-	{
-		ft_op_run_dq_ra(dq);
-		size++;
-	}
-	while (size > 0)
-	{
-		ret = ft_deque_get_front(n);
-		ft_deque_pop_front(n);
-		if (size < ret)
-			ft_deque_push_front(n, ret - size);
-		size -= ret;
-	}
 }
 
 static void	_dq_cmp_with_med_from_a_to_b(t_dq *dq, t_deque *n)
@@ -84,6 +63,18 @@ static void	_sort_pb(t_dq *dq, t_deque *n)
 	ft_deque_pop_front(n);
 }
 
+static void	_dq_sort(t_dq *dq, t_deque *n)
+{
+	_sort_pa_ra(dq, n);
+	ft_dq_sort_front_of_a_is_mini(dq, n);
+	if (ft_deque_get_front(n) < 5)
+		ft_dq_sort_ra(dq, n);
+	if (ft_deque_get_front(n) < 50)
+		_sort_pb(dq, n);
+	else
+		_dq_cmp_with_med_from_a_to_b(dq, n);
+}
+
 void	ft_dq_sort(t_dq *dq)
 {
 	int		ret;
@@ -101,16 +92,11 @@ void	ft_dq_sort(t_dq *dq)
 		ft_deque_push_front(n, ret);
 		while (42)
 		{
-			if (ft_deque_is_sorted(dq->a, dq->cmp_a) && ft_deque_get_size(dq->a, dq->a->front, dq->a->back) == dq->a->size)
+			if (ft_deque_is_sorted(dq->a, dq->cmp_a)
+				&& ft_deque_get_size(dq->a, dq->a->front, dq->a->back)
+				== dq->a->size)
 				break ;
-			_sort_pa_ra(dq, n);
-			_sort_front_of_a_is_mini(dq, n);
-			if (ft_deque_get_front(n) < 5)
-				ft_dq_sort_ra(dq, n);
-			if (dq->a->size <= 256)
-				_sort_pb(dq, n);
-			else
-				_dq_cmp_with_med_from_a_to_b(dq, n);
+			_dq_sort(dq, n);
 		}
 		ft_deque_free(n);
 	}

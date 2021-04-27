@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 09:53:55 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 02:34:27 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,6 @@ int		ft_cmp_ascending_order(const void *a, const void *b);
 int		ft_cmp_descending_order(const void *a, const void *b);
 int		ft_deque_get_type4(t_deque *dq);
 int		ft_deque_get_type5(t_deque *dq, t_cmp *cmp);
-int		ft_array_get_type5(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_0(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_0_0(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_0_1(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_0_2(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_1(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_2(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_3(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_4(int a[5], t_cmp *cmp);
-int		ft_array_get_type5_5(int a[5], t_cmp *cmp);
 void	ft_deque_sort5(t_dq *dq, int type);
 void	ft_deque_ra_type_0(t_dq *dq);
 void	ft_deque_ra_type_1(t_dq *dq);
@@ -114,6 +104,7 @@ void	ft_dq_sort(t_dq *dq);
 void	ft_dq_sort_init_op(t_deque *op);
 void	ft_dq_sort_less_than_5(t_dq *dq);
 void	ft_dq_sort_less_than_10(t_dq *dq);
+void	ft_dq_sort_front_of_a_is_mini(t_dq *dq, t_deque *n);
 void	ft_dq_sort_pa_ra(t_dq *dq);
 void	ft_dq_sort_pa_ra_2(t_dq *dq);
 void	ft_dq_sort_pa_ra_3(t_dq *dq);
