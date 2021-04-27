@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:03:10 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 05:46:41 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 05:59:51 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,18 @@ static inline void	_read_operation(t_deque *a, t_deque *b, int option)
 	free(op);
 }
 
+static void	_run_checker(t_deque *a, t_deque *b, char *argv[], int option)
+{
+	_deque_init(a, argv, option);
+	if (ft_check_dup(a->val, b->val, a->back + 1, ft_cmp) == 1)
+		ft_exit("Error dup\n");
+	_read_operation(a, b, option);
+	if (ft_deque_is_sorted(a, ft_cmp) && ft_deque_is_full(a))
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("NG", 1);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_deque	*dq[2];
@@ -74,17 +86,10 @@ int	main(int argc, char *argv[])
 	dq[0] = ft_deque_init(argc - 1 - option_v);
 	if (dq[0] == NULL)
 		ft_exit("Error\n");
-	_deque_init(dq[0], argv, option_v);
 	dq[1] = ft_deque_init(argc - 1 - option_v);
 	if (dq[1] == NULL)
 		ft_exit("Error\n");
-	if (ft_check_dup(dq[0]->val, dq[1]->val, dq[0]->back + 1, ft_cmp) == 1)
-		ft_exit("Error dup\n");
-	_read_operation(dq[0], dq[1], option_v);
-	if (ft_deque_is_sorted(dq[0], ft_cmp) && ft_deque_is_full(dq[0]))
-		ft_putendl_fd("OK", 1);
-	else
-		ft_putendl_fd("NG", 1);
+	_run_checker(dq[0], dq[1], argv, option_v);
 	ft_deque_free(dq[0]);
 	ft_deque_free(dq[1]);
 	return (0);
