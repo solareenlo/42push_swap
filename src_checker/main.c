@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:03:10 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 04:04:59 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 05:07:53 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	_deque_init(t_deque *dq, char *argv[])
 static inline void	_ret_is_1(t_deque *a, t_deque *b, char *op)
 {
 	if (ft_check_ope(op) == 1)
-		ft_run_ope_dq(a, b, op);
+		ft_run_ope(a, b, op);
 	else
 		ft_exit("Error\n");
 }
@@ -62,7 +62,7 @@ static inline void	read_operation(t_deque *a, t_deque *b)
 			if (op[0] == '\0')
 				break ;
 			if (ft_check_ope(op) == 1)
-				ft_run_ope_dq(a, b, op);
+				ft_run_ope(a, b, op);
 			else
 				ft_exit("Error\n");
 			break ;
