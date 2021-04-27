@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:37:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 10:40:42 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 10:59:31 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,167 @@ void	ft_deque_sort5(t_dq *dq, int type)
 	{
 		ft_op_run_dq_pb(dq);
 		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	else if (type == 40)
+	{
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	else if (type == 41)
+	{
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	else if (type == 42)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_ra(dq);
+		ft_op_run_dq_sa(dq);
+	}
+	else if (type == 43)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ra(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	else if (type == 44)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_sa(dq);
+	}
+	else if (type == 45)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_ra(dq);
+	}
+	else if (type == 46)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	else if (type == 47)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_ra(dq);
+	}
+	if (type == 48)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	if (type == 49)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ra(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	if (type == 50)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	if (type == 51)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+	}
+	if (type == 52)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	if (type == 53)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_pa(dq);
+	}
+	if (type == 54)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_sa(dq);
+	}
+	if (type == 55)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ra(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	if (type == 56)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_ra(dq);
+	}
+	if (type == 57)
+	{
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	if (type == 58)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_rra(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_pa(dq);
+		ft_op_run_dq_sa(dq);
+		ft_op_run_dq_rra(dq);
+	}
+	if (type == 59)
+	{
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_pb(dq);
+		ft_op_run_dq_ss(dq);
+		ft_op_run_dq_pa(dq);
 		ft_op_run_dq_pa(dq);
 		ft_op_run_dq_rra(dq);
 	}
