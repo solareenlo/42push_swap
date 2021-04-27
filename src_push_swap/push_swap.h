@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 08:15:32 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 09:13:18 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int		ft_deque_get_type4(t_deque *dq);
 int		ft_deque_get_type5(t_deque *dq, t_cmp *cmp);
 int		ft_array_get_type5(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_0(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_0(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_1(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_2(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_1(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_2(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_3(int a[5], t_cmp *cmp);
