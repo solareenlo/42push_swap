@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:05:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/22 18:29:04 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 02:34:38 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,16 @@ int		ft_array_sort4_6(int *a, t_cmp *cmp);
 int		ft_array_get_median(int *a, size_t n, t_cmp *cmp);
 int		ft_array_get_first_quartile(int *a, size_t n, t_cmp *cmp);
 void	ft_array_reverse(int *a, int start, int end);
+int		ft_array_get_type5(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_0(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_1(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_0_2(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_1(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_2(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_3(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_4(int a[5], t_cmp *cmp);
+int		ft_array_get_type5_5(int a[5], t_cmp *cmp);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void *));

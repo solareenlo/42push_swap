@@ -6,11 +6,11 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:09:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 09:23:58 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 02:35:08 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static int	_get_type5_0_1(int a[5], t_cmp *cmp)
 {
