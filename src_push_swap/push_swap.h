@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 07:38:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/27 09:13:18 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/27 09:53:55 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		ft_array_get_type5_2(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_3(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_4(int a[5], t_cmp *cmp);
 int		ft_array_get_type5_5(int a[5], t_cmp *cmp);
+void	ft_deque_sort5(t_dq *dq, int type);
 void	ft_deque_ra_type_0(t_dq *dq);
 void	ft_deque_ra_type_1(t_dq *dq);
 void	ft_deque_ra_type_2(t_dq *dq);
@@ -136,6 +137,7 @@ void	ft_op_run_dq_rb(t_dq *dq);
 void	ft_op_run_dq_pa(t_dq *dq);
 void	ft_op_run_dq_sa(t_dq *dq);
 void	ft_op_run_dq_ra(t_dq *dq);
+void	ft_op_run_dq_rra(t_dq *dq);
 void	ft_op_run_dq_ss(t_dq *dq);
 void	ft_op_run_dq_pa_ra(t_dq *dq);
 void	ft_op_run_dq(t_dq *dq, int op);
