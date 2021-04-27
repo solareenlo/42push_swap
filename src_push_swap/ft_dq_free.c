@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:28:38 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 16:30:19 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 07:51:10 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_dq_free(t_dq *dq)
 			free(dq->a);
 		if (dq->b)
 			free(dq->b);
+		if (dq->sorted)
+			free(dq->sorted);
 		free(dq);
 	}
 }
