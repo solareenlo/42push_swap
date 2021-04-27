@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:34:22 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/26 21:05:04 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 01:40:14 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,29 @@ static void	_dq_cmp_with_med_from_a_to_b(t_dq *dq, t_deque *n)
 	}
 }
 
+static void	_sort_pb(t_dq *dq, t_deque *n)
+{
+	int	i;
+	int	size;
+	int	cnt;
+
+	size = ft_deque_get_front(n);
+	i = 0;
+	cnt = 0;
+	while (i < size)
+	{
+		if (ft_deque_get_front(dq->sorted) == ft_deque_get_front(dq->a))
+			ft_op_run_dq_ra(dq);
+		else
+		{
+			ft_op_run_dq_pb(dq);
+			cnt++;
+		}
+		i++;
+	}
+	ft_deque_pop_front(n);
+}
+
 void	ft_dq_sort(t_dq *dq)
 {
 	int		ret;
@@ -76,19 +99,18 @@ void	ft_dq_sort(t_dq *dq)
 		ret = ft_dq_cmp_with_med_from_a_to_b_first(dq,
 				ft_deque_get_size(dq->a, dq->a->front, dq->a->back));
 		ft_deque_push_front(n, ret);
-		while (!ft_deque_is_empty(n))
+		while (42)
 		{
+			if (ft_deque_is_sorted(dq->a, dq->cmp_a) && ft_deque_get_size(dq->a, dq->a->front, dq->a->back) == dq->a->size)
+				break ;
 			_sort_pa_ra(dq, n);
-			ft_putstr_fd("A:", 1);
-			ft_deque_put(dq->a);
-			ft_putstr_fd("B:", 1);
-			ft_deque_put(dq->b);
-			ft_putstr_fd("n:", 1);
-			ft_deque_put(n);
 			_sort_front_of_a_is_mini(dq, n);
 			if (ft_deque_get_front(n) < 5)
 				ft_dq_sort_ra(dq, n);
-			_dq_cmp_with_med_from_a_to_b(dq, n);
+			if (dq->a->size <= 256)
+				_sort_pb(dq, n);
+			else
+				_dq_cmp_with_med_from_a_to_b(dq, n);
 		}
 		ft_deque_free(n);
 	}
