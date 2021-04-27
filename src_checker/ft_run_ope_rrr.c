@@ -6,13 +6,13 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 05:04:52 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 05:14:49 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 05:46:04 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	_run_rra(t_deque *a, t_deque *b)
+static void	_run_rra(t_deque *a, t_deque *b, int option)
 {
 	int	tmp;
 
@@ -22,10 +22,10 @@ static void	_run_rra(t_deque *a, t_deque *b)
 		ft_deque_pop_back(a);
 		ft_deque_push_front(a, tmp);
 	}
-	ft_display_stack(a, b);
+	ft_display_stack(a, b, option);
 }
 
-static void	_run_rrb(t_deque *a, t_deque *b)
+static void	_run_rrb(t_deque *a, t_deque *b, int option)
 {
 	int	tmp;
 
@@ -35,10 +35,10 @@ static void	_run_rrb(t_deque *a, t_deque *b)
 		ft_deque_pop_back(b);
 		ft_deque_push_front(b, tmp);
 	}
-	ft_display_stack(a, b);
+	ft_display_stack(a, b, option);
 }
 
-static void	_run_rrr(t_deque *a, t_deque *b)
+static void	_run_rrr(t_deque *a, t_deque *b, int option)
 {
 	int	tmp;
 
@@ -54,15 +54,15 @@ static void	_run_rrr(t_deque *a, t_deque *b)
 		ft_deque_pop_back(b);
 		ft_deque_push_front(b, tmp);
 	}
-	ft_display_stack(a, b);
+	ft_display_stack(a, b, option);
 }
 
-void	ft_run_ope_rrr(t_deque *a, t_deque *b, char *op)
+void	ft_run_ope_rrr(t_deque *a, t_deque *b, char *op, int option)
 {
 	if (ft_strncmp("rra", op, ft_strlen("rra") + 1) == 0)
-		_run_rra(a, b);
+		_run_rra(a, b, option);
 	if (ft_strncmp("rrb", op, ft_strlen("rrb") + 1) == 0)
-		_run_rrb(a, b);
+		_run_rrb(a, b, option);
 	if (ft_strncmp("rrr", op, ft_strlen("rrr") + 1) == 0)
-		_run_rrr(a, b);
+		_run_rrr(a, b, option);
 }

@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:19:21 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/11 23:01:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 05:30:35 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int	check_argv(char *argv)
 	return (0);
 }
 
-int	ft_check_int(int argc, char *argv[])
+int	ft_check_int(int argc, char *argv[], int option)
 {
 	int	i;
 
-	if (argc == 1)
+	if (argc == 1 + option)
 		return (1);
-	i = 1;
+	i = 1 + option;
 	while (i < argc)
 	{
 		if (check_argv(argv[i]))

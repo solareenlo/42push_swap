@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_stack.c                                 :+:      :+:    :+:   */
+/*   ft_cmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 04:41:11 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 05:40:06 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/04/28 05:35:22 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/04/28 05:35:43 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_display_stack(t_deque *a, t_deque *b, int option)
+int	ft_cmp(const void *a, const void *b)
 {
-	if (option)
-	{
-		ft_putstr_fd("\tA:", 1);
-		if (ft_deque_is_empty(a))
-			ft_putstr_fd("\n", 1);
-		else
-			ft_deque_put(a);
-		ft_putstr_fd("\tB:", 1);
-		if (ft_deque_is_empty(b))
-			ft_putstr_fd("\n", 1);
-		else
-			ft_deque_put(b);
-	}
+	const int	*aa;
+	const int	*bb;
+
+	bb = b;
+	aa = a;
+	if (*aa < *bb)
+		return (-1);
+	else if (*aa > *bb)
+		return (1);
+	else
+		return (0);
 }
