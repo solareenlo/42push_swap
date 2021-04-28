@@ -5,5 +5,4 @@ push_swap
 obj_checker
 obj_push_swap
 pyviz.py
-permutation.cpp
 *.txt
