@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:03:10 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 05:59:51 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 09:55:52 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	_run_checker(t_deque *a, t_deque *b, char *argv[], int option)
 	if (ft_deque_is_sorted(a, ft_cmp) && ft_deque_is_full(a))
 		ft_putendl_fd("OK", 1);
 	else
-		ft_putendl_fd("NG", 1);
+		ft_putendl_fd("KO", 1);
 }
 
 int	main(int argc, char *argv[])
