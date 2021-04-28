@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:19:21 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 09:19:32 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 09:46:14 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int	_is_int(char *argv, long l, int i, int sign)
 {
+	if (argv[i] == '\0')
+		return (1);
 	while (argv[i])
 	{
 		if (ft_isdigit(argv[i]) == 0)
