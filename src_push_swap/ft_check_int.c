@@ -6,13 +6,29 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 21:48:14 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/16 16:46:52 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/28 09:46:20 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_argv(char *argv)
+static int	_is_int(char *argv, long l, int i, int sign)
+{
+	if (argv[i] == '\0')
+		return (1);
+	while (argv[i])
+	{
+		if (ft_isdigit(argv[i]) == 0)
+			return (1);
+		l = 10 * l + argv[i++] - '0';
+		if ((sign == 1 && l > 0x000000007FFFFFFF)
+			|| (sign == -1 && l > 0x0000000080000000))
+			return (1);
+	}
+	return (0);
+}
+
+static int	_check_argv(char *argv)
 {
 	int		i;
 	long	l;
@@ -21,6 +37,8 @@ static int	check_argv(char *argv)
 	i = 0;
 	while (ft_isspace(argv[i]))
 		i++;
+	if (argv[i] == '\0')
+		return (1);
 	l = 0;
 	sign = 1;
 	if (argv[i] == '-' || argv[i] == '+')
@@ -29,16 +47,7 @@ static int	check_argv(char *argv)
 			sign = -1;
 		i++;
 	}
-	while (argv[i])
-	{
-		if (ft_isdigit(argv[i]) == 0)
-			return (1);
-		l = 10 * l + argv[i++] - '0';
-		if ((sign == 1 && l > INTMAX)
-			|| (sign == -1 && l > INTMIN))
-			return (1);
-	}
-	return (0);
+	return (_is_int(argv, l, i, sign));
 }
 
 int	ft_check_int(int argc, char *argv[])
@@ -50,7 +59,7 @@ int	ft_check_int(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		if (check_argv(argv[i]))
+		if (_check_argv(argv[i]))
 			return (1);
 		i++;
 	}
