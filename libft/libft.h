@@ -6,14 +6,13 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 05:05:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/04/28 02:34:38 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/04/29 23:22:16 by tayamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
